@@ -27,10 +27,22 @@ console.log(myHeading);
 
 function setUserName() {
   const myName = prompt('What your name?');
-  myHeading.textContent = `Welcome ${myName}.`;
+  if (!myName) {
+    setUserName();
+  } else {
+    localStorage.setItem('name', myName);
+    myHeading.textContent = `Welcome ${myName}.`;
+  }
 }
 
-setUserName();
+//setUserName();
+
+if (!localStorage.getItem('name')) {
+  setUserName();
+} else {
+  const storedName = localStorage.getItem('name');
+  myHeading.textContent = `welcome ${storedName}`;
+}
 
 myButton.addEventListener('click', () => {
   setUserName();
