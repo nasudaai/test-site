@@ -1,5 +1,5 @@
-const myHeading = document.querySelector('h1');
-myHeading.textContent = "hello world!";
+//const myHeading = document.querySelector('h1');
+//myHeading.textContent = "hello world!";
 
 /* document.querySelector('html').addEventListener('click', function () {
   alert('you poked!');
@@ -17,3 +17,21 @@ myImage.onclick = () => {
     myImage.setAttribute('src', 'images/image-big.png');
   }
 };
+
+let myButton = document.querySelector('button');
+console.log(myButton);
+
+let myHeading = document.querySelector('h1');
+console.log(myHeading);
+
+
+function setUserName() {
+  const myName = prompt('What your name?');
+  myHeading.textContent = `Welcome ${myName}.`;
+}
+
+setUserName();
+
+myButton.addEventListener('click', () => {
+  setUserName();
+})
